@@ -1,0 +1,71 @@
+Hi team,
+
+I've completed an initial analysis of our receipt data and wanted to share some key findings and questions. I'd appreciate your insights to help us improve data quality and system performance.
+Key Findings:
+
+Price Consistency Issues
+
+
+We're seeing cases where the receipt total doesn't match the sum of individual items
+Some items show discrepancies between their listed price and final price
+Question: Are these discrepancies due to discounts/promotions that aren't being captured, or is this a data entry issue?
+
+
+Receipt Item Tracking
+
+
+Noticed instances where the declared item count doesn't match the actual number of items
+Some receipts have duplicate items with identical barcodes
+Question: How should we handle cases where customers buy multiple identical items? Should they be consolidated or kept separate?
+
+
+User-Flagged Data
+
+
+Users are manually correcting some item information (prices, barcodes, quantities)
+Question: What triggers these manual corrections? Understanding this could help us improve our automatic recognition system.
+
+To Resolve These Issues, We Need:
+
+Business Context:
+
+
+What are the valid status transitions for receipts? (e.g., FLAGGED → FINISHED)
+Are there specific rules for bonus point calculations?
+What's the expected timeframe between purchase date and scan date?
+
+
+Technical Information:
+
+
+Are all fields mandatory, or can some be optional?
+What's the source of the barcode data?
+How are competitive products and reward groups determined?
+
+Optimization & Scaling Considerations:
+
+Data Volume:
+
+
+Current analysis shows 1119 receipts with 6941 line items
+How many receipts do we expect to process daily/monthly?
+What's our data retention policy?
+
+
+Performance Plans:
+
+
+Propose implementing partitioning by date for faster queries
+Consider materialized views for commonly accessed metrics
+Suggest adding indexes for frequent lookup patterns
+
+Next Steps:
+
+Would love to schedule a meeting to discuss these findings and get your input
+Need to establish clear data quality thresholds
+Define SLAs for receipt processing time
+
+Please let me know when would be a good time to discuss these points in detail. I believe addressing these questions will help us build a more robust and scalable system.
+
+Best regards,
+Sri.
